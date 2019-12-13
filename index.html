@@ -4,29 +4,33 @@
         <title>Vino Axon Technologies</title>
         <link href="https://fonts.googleapis.com/css?family=Baskervville|Gelasio&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css"/>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="js/vino.js"></script>
         <script src="js/router.js"></script>
-        
         <link href="prism.css" rel="stylesheet" />
-
-        
+        <script src="js/effects.js"></script>
     </head>
     <body>
         <div id="headerBox">
-            
             <div id="navBar" style="display: table">
                 <h1 id="headerText">VINO</h1>
-                <h2>Home</h2>
-                <h2>Tutorials</h2>
+                <h2><a href="#main">Home</a></h2>
                 <h2>About</h2>
+                <h2 id="tutButton">
+                    Tutorials
+                    <ul class="dropdown" id="tutDropdown">
+                        <li>p5.js</li>
+                        <li><a href="#faust">Faust</a></li>
+                        <li>Processing</li>
+                        <li>Monogame</li>
+                    </ul>
+                </h2>
+                
             </div>
         </div>
         <div id="main">
-                
             <div id="$vino" vino-default="main"></div>
         </div>
         <script src="js/prism.js"></script>
-        
     </body>
 </html>

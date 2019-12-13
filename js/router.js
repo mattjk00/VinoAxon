@@ -1,10 +1,15 @@
+var initHighlight = false;
 // setup the vino views
 async function setup() {
     await vinoStart([
         await newView('main', 'views/main.html'),
+        await newView('faust', 'views/faust/dir.html'),
     ]);
 }
-setup().then(highlight);
+setup().then(function() {
+    highlight();
+    initHighlight = true;
+});
 
 function highlight() {
     document.querySelectorAll('pre code').forEach((block) => {

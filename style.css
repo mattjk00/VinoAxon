@@ -5,6 +5,14 @@ body {
 p {
     font-size:1.2em;
 }
+
+a {
+    text-decoration: none;
+    color:rgb(206, 206, 206);
+}
+a:hover {
+    color:#d65967;
+}
 #headerBox {
     width:100vw;
     position: absolute;
@@ -12,6 +20,7 @@ p {
     top:0;
     height:15vh;
     background-color: #2A2826;
+    z-index: 1;
 }
 #headerText {
     margin-left:20vw;
@@ -39,4 +48,15 @@ p {
     background-color:rgb(32, 32, 31);
     padding:5px;
     border-radius:4px;
+}
+.dropdown {
+    background-color:#2A2826;
+    padding:5px;
+    border:1px solid #d65967;
+    border-bottom-left-radius: 3px;
+    border-top:none;
+    list-style-type: none;
+}
+.dropdown li {
+    margin-top:1vh;
 }

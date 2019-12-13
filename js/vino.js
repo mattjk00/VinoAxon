@@ -18,9 +18,13 @@ async function newView(name, filePath) {
 function display(viewName, changeHash = true) {
     if (!changeHash) {
         const found = views.find(v => v.name == viewName);
-        document.getElementById("$vino").innerHTML = found.content;
+        document.getElementById("$vino").innerHTML = found.content; 
     } else {
         window.location.hash = "#" + viewName;
+        
+    }
+    if (initHighlight) {
+        highlight();
     }
 }
 
