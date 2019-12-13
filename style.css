@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(32, 32, 31);
+    font-family: "Baskervville";
+}
+p {
+    font-size:1.2em;
+}
+#headerBox {
+    width:100vw;
+    position: absolute;
+    left:0;
+    top:0;
+    height:15vh;
+    background-color: #2A2826;
+}
+#headerText {
+    margin-left:20vw;
+    margin-top:6vh;
+    color:#d65967;
+    
+}
+#navBar h2 {
+    display: table-cell;
+    padding-left:5vw;
+    color:rgb(206, 206, 206);
+}
+#main {
+    position: absolute;
+    width:50vw;
+    height:50vh;
+    margin-left:25vw;
+    margin-top:20vh;
+    background-color:#2A2826;
+    padding:25px;
+    color:rgb(161, 161, 161);
+}
