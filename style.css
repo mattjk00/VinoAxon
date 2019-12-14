@@ -1,6 +1,7 @@
 body {
     background-color: rgb(32, 32, 31);
     font-family: "Baskervville";
+    overflow-x: hidden;
 }
 p {
     font-size:1.2em;
@@ -11,6 +12,9 @@ a {
     color:rgb(206, 206, 206);
 }
 a:hover {
+    color:#d65967;
+}
+f {
     color:#d65967;
 }
 #headerBox {
@@ -43,6 +47,8 @@ a:hover {
     padding:25px;
     color:rgb(161, 161, 161);
     border-radius:4px;
+    height: auto;
+    min-height: 50vh !important;
 }
 .codeblock {
     background-color:rgb(32, 32, 31);

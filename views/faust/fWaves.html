@@ -1,0 +1,30 @@
+<h1>Making Sound</h1>
+<p>
+    Let's create some sound by using Faust's built in <f>oscillators.lib</f>.
+    All built in oscillators can be used by typing <f>os.whateverHere</f>. Let's start by creating a simple sine wave and
+    setting it as the output for the program.
+    <br/>
+    To create a sin wave signal at 440Hz, you can type:
+    <pre class="codeblock"><code>process = os.oscsin(440); // be careful this might be loud when running it</code></pre>
+    That's it! There are also built in faust oscillators for cos, triangle, square, LFOs, and more!
+    You can also change the amplitude by simply multiplying it by a number.
+    <pre class="codeblock"><code>// The same wave as before except now with half the amplitude
+process = os.oscsin(440) * 0.5;</code></pre>
+    
+    Now let's try creating a program that outputs stereo sine waves that create a Major Third interval.
+    <pre class="codeblock"><code>// The 440Hz wave (A4) will output in the left channel and the 554 (C#4) will output in the right.
+process = os.oscsin(440), os.oscsin(554);</code></pre>
+
+    <br/>
+</p>
+<h1>Basic Modulation</h1>
+<p>
+    Now let's create some waves and apply some basic amplitude and frequency modulations.
+    Let's take a basic sine wave and modulate it's amplitude with a low frequency triangle wave.
+    <pre class="codeblock"><code>process = os.oscsin(440) * os.lf_triangle(1);</code></pre>
+    When you run this code you should hear a pure tone with a kind of tremelo effect on it.
+    Now let's try modulating the frequency of our sine wave.
+    <pre class="codeblock"><code>process = os.oscsin(440 + os.lf_triangle(2) * 100);</code></pre>
+    You should hear something that sounds kind of like Pac-Man. This code takes the constant Frequency of 440 and modulates by up to 100Hz. You can change the value
+    that you multiply the modulating oscillator by to increase or decrease the modulating effect (try it with 5 and 500 to hear the difference).
+</p>
