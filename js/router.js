@@ -5,6 +5,7 @@ async function setup() {
         await newView('main', 'views/main.html'),
         await newView('faust', 'views/faust/dir.html'),
         await newView('waves', 'views/faust/fWaves.html'),
+        await newView('faustvars', 'views/faust/fVars.html'),
     ]);
 }
 setup().then(function() {

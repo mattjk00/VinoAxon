@@ -1,0 +1,26 @@
+<h1>Variables</h1>
+<p>
+    It is easy to declare your own variables in a faust program. To create an integer with value one, you can type:
+    <pre class="codeblock"><code>x = 1;</code></pre>
+    This variable essentially represents a signal with constant amplitude of 1.
+    Now let's declare a floating point signal and multiply it to the mic input to lower the output volume.
+    <pre class="codeblock"><code>gain = 0.1;
+process = *(gain); // alternatively... process = _ * gain;</code></pre>
+    Adjust the gain value to hear how the volume is affected.
+</p>
+<h1>Signals with Parameters</h1>
+<p>
+    Signal variables can also be declared with parameters. To demonstrate this, let's create a signal function that outputs stereo oscillators at 50Hz apart.
+    <pre class="codeblock"><code>f(x) = os.oscsin(x), os.oscsin(x + 50);</code></pre>
+    Now plugging it into the process...
+    <pre class="codeblock"><code>process = f(440);</code></pre>
+    Now we can create more complex signal blocks with the use of the <f>with</f> syntax. Let's use declarations to create a signal whos amplitude and frequency is modulated.
+    <pre class="codeblock"><code>import("stdfaust.lib");
+        
+// signal w(f, mod) where f is a given frequency and mod is the range of frequency modulation.
+w(f, mod) = am * os.triangle(f + fm * mod) with { 
+    am = os.lf_triangle(5); // declare the amplitude modulating signal used in the expression above
+    fm = os.lf_triangle(2); // declare the FM signal
+};
+process = w(440, 50);</code></pre>
+</p>
